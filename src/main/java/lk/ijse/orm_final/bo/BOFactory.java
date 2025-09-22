@@ -1,7 +1,7 @@
 package lk.ijse.orm_final.bo;
 
 
-import lk.ijse.orm_final_course_work.bo.custom.impl.*;
+import lk.ijse.orm_final.bo.custom.impl.*;
 
 public class BOFactory {
     public enum BOType {
