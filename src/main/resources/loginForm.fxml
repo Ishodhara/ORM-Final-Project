@@ -10,33 +10,78 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="fullLoginForm" prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: linear-gradient(to bottom, #c9e7f2, #f8f9fa);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.orm_final_course_work.controller.LoginFormController">
+<AnchorPane fx:id="fullLoginForm" prefHeight="420.0" prefWidth="650.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #ff9a9e, #ff6a00);"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.orm_final.controller.LoginFormController">
     <children>
-        <!-- Background Image -->
-        <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="100.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+
+        <!-- Optional Background Image with light overlay -->
+        <ImageView fitHeight="420.0" fitWidth="650.0" opacity="0.18" preserveRatio="true">
             <image>
-                <Image url="@../../../../../Downloads/ORM_Course_work/src/main/resources/assest/Driving School.jpg" />
+                <Image url="@images/Driving School Background.jpg" />
             </image>
         </ImageView>
 
-        <!-- Login Box -->
-        <AnchorPane fx:id="loginForm" layoutX="50.0" layoutY="320.0" prefHeight="340.0" prefWidth="350.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+        <!-- Glassmorphism Login Box -->
+        <AnchorPane fx:id="loginForm" layoutX="150.0" layoutY="40.0"
+                    prefHeight="340.0" prefWidth="350.0"
+                    style="-fx-background-color: rgba(255,255,255,0.92);
+                           -fx-background-radius: 20;
+                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0, 0, 10);">
             <children>
-                <Label layoutX="125.0" layoutY="25.0" text="Login" textFill="#333333">
+                <!-- Title -->
+                <Label layoutX="120.0" layoutY="25.0" text="🔐 Login"
+                       textFill="#e65100">
                     <font>
-                        <Font name="Arial Bold" size="30.0" />
+                        <Font name="Segoe UI Bold" size="28.0" />
                     </font>
                 </Label>
 
-                <TextField fx:id="inputUserName" layoutX="55.0" layoutY="90.0" onAction="#inputUserNameOnAction" prefHeight="40.0" prefWidth="240.0" promptText="User Name" style="-fx-background-radius: 10; -fx-border-color: #cccccc; -fx-border-radius: 10;" />
+                <!-- Username -->
+                <TextField fx:id="inputUserName" layoutX="55.0" layoutY="90.0"
+                           onAction="#inputUserNameOnAction"
+                           prefHeight="45.0" prefWidth="240.0"
+                           promptText="👤  Username"
+                           style="-fx-background-color: #fefefe;
+                                  -fx-background-radius: 12;
+                                  -fx-border-color: #f4a261;
+                                  -fx-border-radius: 12;
+                                  -fx-padding: 0 0 0 10;
+                                  -fx-font-size: 13px;" />
 
-                <PasswordField fx:id="inputPassword" layoutX="55.0" layoutY="150.0" onAction="#inputPasswordOnAction" prefHeight="40.0" prefWidth="240.0" promptText="Password" style="-fx-background-radius: 10; -fx-border-color: #cccccc; -fx-border-radius: 10;" />
+                <!-- Password -->
+                <PasswordField fx:id="inputPassword" layoutX="55.0" layoutY="150.0"
+                               onAction="#inputPasswordOnAction"
+                               prefHeight="45.0" prefWidth="240.0"
+                               promptText="🔒  Password"
+                               style="-fx-background-color: #fefefe;
+                                      -fx-background-radius: 12;
+                                      -fx-border-color: #f4a261;
+                                      -fx-border-radius: 12;
+                                      -fx-padding: 0 0 0 10;
+                                      -fx-font-size: 13px;" />
 
-                <Button layoutX="110.0" layoutY="220.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: linear-gradient(to right, #3a6073, #16222a); -fx-background-radius: 20; -fx-cursor: hand;" text="LOGIN" textFill="white" />
+                <!-- Login Button -->
+                <Button layoutX="85.0" layoutY="220.0"
+                        mnemonicParsing="false" onAction="#loginOnAction"
+                        prefHeight="48.0" prefWidth="180.0"
+                        style="-fx-background-color: linear-gradient(to right, #ff6a00, #ff3d7f);
+                               -fx-background-radius: 24;
+                               -fx-font-size: 15px;
+                               -fx-font-weight: bold;
+                               -fx-cursor: hand;"
+                        text="➡️  LOGIN"
+                        textFill="white" />
 
-                <Text layoutX="75.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" fill="#555555" />
-
-                <Text layoutX="230.0" layoutY="290.0" onMouseClicked="#goToSignUpOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" underline="true" fill="#2c77f4" style="-fx-cursor: hand;">
+                <!-- Signup Redirect -->
+                <Text fill="#5d4037" layoutX="70.0" layoutY="300.0"
+                      text="Don't have an account?" />
+                <Text fill="#d84315" layoutX="225.0" layoutY="300.0"
+                      onMouseClicked="#goToSignUpOnAction"
+                      style="-fx-cursor: hand;"
+                      text="Sign Up ➕" underline="true">
                     <font>
                         <Font name="System Bold" size="13.0" />
                     </font>
