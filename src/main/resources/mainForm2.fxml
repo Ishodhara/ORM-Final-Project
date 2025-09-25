@@ -26,7 +26,7 @@
         <ImageView fitHeight="133.0" fitWidth="188.0" layoutX="26.0" layoutY="23.0"
                    pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@images/Elite Driving School (1).png" />
+                <Image url="@images/dashboard logo.jpg" />
             </image>
         </ImageView>
 

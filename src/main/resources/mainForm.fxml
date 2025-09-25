@@ -24,7 +24,7 @@
         <ImageView fitHeight="119.0" fitWidth="184.0" layoutX="40.0" layoutY="27.0" pickOnBounds="true"
                    preserveRatio="true" style="-fx-background-radius: 50;">
             <image>
-                <Image url="@images/dashboard.gif" />
+                <Image url="@images/dashboard logo.jpg" />
             </image>
         </ImageView>
 
