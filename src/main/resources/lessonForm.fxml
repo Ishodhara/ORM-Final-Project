@@ -1,70 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="lessonForm" prefHeight="630.0" prefWidth="770.0"
-            style="-fx-background-color: #FFE5B4;"
-            xmlns="http://javafx.com/javafx/21"
+            style="-fx-background-color: linear-gradient(to bottom, #c1856d, #9a3f3f);"
+            xmlns="http://javafx.com/javafx/23.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="lk.ijse.orm_final_course_work.controller.LessonFormController">
+            fx:controller="lk.ijse.orm_final.controller.LessonFormController">
 
     <children>
         <!-- Header -->
-        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="45.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="45.0" layoutY="40.0"
+                   pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@asset/icon/lesson.png"/>
+                <Image url="@images/online-lesson.gif" />
             </image>
         </ImageView>
-        <Label layoutX="113.0" layoutY="46.0" text="Lesson Manage">
+        <Label layoutX="113.0" layoutY="46.0" prefHeight="37.0" prefWidth="304.0"
+               text="Lesson Management" style="-fx-text-fill: #ffffff;">
             <font>
-                <Font name="DejaVu Serif Condensed Bold" size="30.0"/>
+                <Font name="Segoe UI Bold" size="30.0"/>
             </font>
         </Label>
 
         <!-- Search Field -->
-        <Label layoutX="400.0" layoutY="120.0" text="Search:"/>
-        <TextField fx:id="txtSearch" layoutX="460.0" layoutY="116.0" prefWidth="250.0"
-                   onKeyReleased="#txtSearchKeyReleased"/>
+        <Label layoutX="400.0" layoutY="120.0" text="Search:" style="-fx-text-fill: #5a2a27;"/>
+        <TextField fx:id="txtSearch" layoutX="460.0" layoutY="116.0"
+                   onKeyReleased="#txtSearchKeyReleased" prefWidth="250.0"/>
 
         <!-- Input Fields -->
         <VBox layoutX="57.0" layoutY="150.0" spacing="15.0">
             <children>
                 <HBox spacing="10.0">
                     <children>
-                        <Label text="Lesson ID :" prefWidth="100.0"/>
-                        <TextField fx:id="txtLessonId" prefWidth="200.0" editable="false"/>
-                        <Label text="Lesson Date :" prefWidth="130.0"/>
+                        <Label prefWidth="100.0" text="Lesson ID :" style="-fx-text-fill: #5a2a27;"/>
+                        <TextField fx:id="txtLessonId" editable="false" prefWidth="200.0"/>
+                        <Label prefHeight="17.0" prefWidth="74.0" text="Lesson Date :" style="-fx-text-fill: #5a2a27;"/>
                         <DatePicker fx:id="dateLesson" prefWidth="200.0"/>
                     </children>
                 </HBox>
 
                 <HBox spacing="10.0">
                     <children>
-                        <Label text="Student :" prefWidth="100.0"/>
+                        <Label prefWidth="100.0" text="Student :" style="-fx-text-fill: #5a2a27;"/>
                         <ComboBox fx:id="cmbStudent" prefWidth="200.0"/>
-                        <Label text="Course :" prefWidth="100.0"/>
+                        <Label prefHeight="17.0" prefWidth="73.0" text="Course :" style="-fx-text-fill: #5a2a27;"/>
                         <ComboBox fx:id="cmbCourse" prefWidth="200.0"/>
                     </children>
                 </HBox>
 
                 <HBox spacing="10.0">
                     <children>
-                        <Label text="Instructor :" prefWidth="100.0"/>
+                        <Label prefWidth="100.0" text="Instructor :" style="-fx-text-fill: #5a2a27;"/>
                         <ComboBox fx:id="cmbInstructor" prefWidth="200.0"/>
-                        <Label text="Time :" prefWidth="100.0"/>
-                        <TextField fx:id="txtTime" promptText="HH:mm:ss" prefWidth="200.0"/>
+                        <Label prefHeight="17.0" prefWidth="74.0" text="Time :" style="-fx-text-fill: #5a2a27;"/>
+                        <TextField fx:id="txtTime" prefWidth="200.0" promptText="HH:mm:ss"/>
                     </children>
                 </HBox>
 
                 <HBox spacing="10.0">
                     <children>
-                        <Label text="Duration :" prefWidth="100.0"/>
-                        <TextField fx:id="txtDuration" promptText="Minutes (e.g. 90)" prefWidth="200.0"/>
+                        <Label prefWidth="100.0" text="Duration :" style="-fx-text-fill: #5a2a27;"/>
+                        <TextField fx:id="txtDuration" prefWidth="200.0" promptText="Minutes (e.g. 90)"/>
                     </children>
                 </HBox>
             </children>
@@ -73,47 +82,49 @@
         <!-- Buttons -->
         <HBox layoutX="220.0" layoutY="360.0" spacing="20.0">
             <children>
-                <JFXButton fx:id="btnClear" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="85.0"
-                           style="-fx-background-color: #808080;" text="Clear" textFill="WHITE">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="15.0"/>
-                    </font>
+                <JFXButton fx:id="btnClear" onAction="#btnClearOnAction"
+                           prefHeight="35.0" prefWidth="85.0"
+                           style="-fx-background-color: #8d6e63; -fx-background-radius: 8;"
+                           text="Clear" textFill="WHITE">
+                    <font><Font name="DejaVu Serif Bold" size="15.0"/></font>
                 </JFXButton>
 
-                <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="85.0"
-                           style="-fx-background-color: #1F45FC;" text="Update" textFill="WHITE">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="15.0"/>
-                    </font>
+                <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction"
+                           prefHeight="35.0" prefWidth="85.0"
+                           style="-fx-background-color: #ef6c00; -fx-background-radius: 8;"
+                           text="Update" textFill="WHITE">
+                    <font><Font name="DejaVu Serif Bold" size="15.0"/></font>
                 </JFXButton>
 
-                <JFXButton fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="85.0"
-                           style="-fx-background-color: #E41B17;" text="Delete" textFill="WHITE">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="15.0"/>
-                    </font>
+                <JFXButton fx:id="btnDelete" onAction="#btnDeleteOnAction"
+                           prefHeight="35.0" prefWidth="85.0"
+                           style="-fx-background-color: #d84315; -fx-background-radius: 8;"
+                           text="Delete" textFill="WHITE">
+                    <font><Font name="DejaVu Serif Bold" size="15.0"/></font>
                 </JFXButton>
 
-                <JFXButton fx:id="btnSave" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="85.0"
-                           style="-fx-background-color: #228B22;" text="Save" textFill="WHITE">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="15.0"/>
-                    </font>
+                <JFXButton fx:id="btnSave" onAction="#btnSaveOnAction"
+                           prefHeight="35.0" prefWidth="85.0"
+                           style="-fx-background-color: #f57c00; -fx-background-radius: 8;"
+                           text="Save" textFill="WHITE">
+                    <font><Font name="DejaVu Serif Bold" size="15.0"/></font>
                 </JFXButton>
             </children>
         </HBox>
 
         <!-- Table -->
-        <TableView fx:id="tblLesson" layoutX="57.0" layoutY="420.0" prefHeight="180.0" prefWidth="700.0"
-                   onMouseClicked="#tblLessonOnClickAction">
+        <TableView fx:id="tblLesson" layoutX="17.0" layoutY="420.0"
+                   onMouseClicked="#tblLessonOnClickAction"
+                   prefHeight="176.0" prefWidth="740.0"
+                   style="-fx-background-color: #fff5f0; -fx-border-color: #ff7043;">
             <columns>
-                <TableColumn fx:id="colLessonId" text="Lesson ID" prefWidth="100.0"/>
-                <TableColumn fx:id="colStudent" text="Student" prefWidth="120.0"/>
-                <TableColumn fx:id="colCourse" text="Course" prefWidth="120.0"/>
-                <TableColumn fx:id="colInstructor" text="Instructor" prefWidth="120.0"/>
-                <TableColumn fx:id="colDate" text="Date" prefWidth="100.0"/>
-                <TableColumn fx:id="colTime" text="Time" prefWidth="80.0"/>
-                <TableColumn fx:id="colDuration" text="Duration" prefWidth="100.0"/>
+                <TableColumn fx:id="colLessonId" prefWidth="77.0" text="Lesson ID"/>
+                <TableColumn fx:id="colStudent" prefWidth="133.0" text="Student"/>
+                <TableColumn fx:id="colCourse" prefWidth="130.0" text="Course"/>
+                <TableColumn fx:id="colInstructor" prefWidth="120.0" text="Instructor"/>
+                <TableColumn fx:id="colDate" prefWidth="100.0" text="Date"/>
+                <TableColumn fx:id="colTime" prefWidth="80.0" text="Time"/>
+                <TableColumn fx:id="colDuration" prefWidth="100.0" text="Duration"/>
             </columns>
         </TableView>
     </children>
