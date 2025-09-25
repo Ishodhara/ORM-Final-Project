@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="settingForm"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.orm_final_course_work.controller.SettingFormController"
-            prefHeight="650.0" prefWidth="800.0"
-            style="-fx-background-color: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);">
+<AnchorPane fx:id="settingForm" prefHeight="650.0" prefWidth="800.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #c1856d, #9a3f3f);"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lk.ijse.orm_final.controller.SettingFormController">
 
     <children>
         <!-- Header -->
         <HBox layoutX="40.0" layoutY="25.0" spacing="15.0"
-              style="-fx-background-color: rgba(0,0,0,0.75); -fx-background-radius: 15; -fx-padding: 15;">
+              style="-fx-background-color: rgba(0,0,0,0.5); -fx-background-radius: 15; -fx-padding: 15;">
             <children>
                 <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
-                    <image>
-                        <Image url="@asset/icon/icons8-setting-48.png"/>
-                    </image>
+                    <Image url="@images/settings.gif"/>
                 </ImageView>
                 <Label text="Settings" textFill="white">
                     <font>
-                        <Font name="Arial Black" size="26.0"/>
+                        <Font name="Segoe UI Bold" size="26.0"/>
                     </font>
                 </Label>
             </children>
         </HBox>
 
         <!-- Change User Details Card -->
-        <VBox layoutX="60.0" layoutY="120.0" spacing="20.0" alignment="TOP_CENTER"
-              style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 25;
-                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);"
-              prefWidth="680" prefHeight="180">
+        <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="113.0" prefHeight="231.0" prefWidth="500.0" spacing="20.0"
+              style="-fx-background-color: #f3ede8; -fx-background-radius: 15; -fx-padding: 25;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);">
 
-            <Label text="Change User Details"
-                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Change User Details"/>
 
-            <GridPane hgap="20" vgap="15">
+            <GridPane hgap="20" vgap="15" prefHeight="73.0" prefWidth="761.0">
                 <columnConstraints>
                     <ColumnConstraints halignment="RIGHT" minWidth="150"/>
                     <ColumnConstraints minWidth="220"/>
@@ -50,46 +54,51 @@
                 </columnConstraints>
 
                 <!-- Username -->
-                <Label text="User Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <TextField fx:id="txtUserName" onAction="#txtUserNameOnAction"
-                           GridPane.rowIndex="0" GridPane.columnIndex="1"
-                           style="-fx-background-radius: 10; -fx-border-color: #ccc; -fx-padding: 5;"/>
+                           style="-fx-background-radius: 10; -fx-border-color: #9a3f3f; -fx-padding: 5;"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
                 <!-- Password -->
-                <Label text="Password:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <Label text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
                 <PasswordField fx:id="txtPassword" onAction="#txtPasswordOnAction"
-                               GridPane.rowIndex="0" GridPane.columnIndex="3"
-                               style="-fx-background-radius: 10; -fx-border-color: #ccc; -fx-padding: 5;"/>
+                               style="-fx-background-radius: 10; -fx-border-color: #9a3f3f; -fx-padding: 5;"
+                               GridPane.columnIndex="3" GridPane.rowIndex="0"/>
 
                 <!-- New Password -->
-                <Label text="New Password:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label text="New Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                 <PasswordField fx:id="txtNewPassword" onAction="#txtNewPasswordOnAction"
-                               GridPane.rowIndex="1" GridPane.columnIndex="1"
-                               style="-fx-background-radius: 10; -fx-border-color: #ccc; -fx-padding: 5;"/>
+                               style="-fx-background-radius: 10; -fx-border-color: #9a3f3f; -fx-padding: 5;"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
                 <!-- Confirm Password -->
-                <Label text="Confirm Password:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <Label text="Confirm Password:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
                 <PasswordField fx:id="txtConfirmPassword"
-                               GridPane.rowIndex="1" GridPane.columnIndex="3"
-                               style="-fx-background-radius: 10; -fx-border-color: #ccc; -fx-padding: 5;"/>
+                               style="-fx-background-radius: 10; -fx-border-color: #9a3f3f; -fx-padding: 5;"
+                               GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                <rowConstraints>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                </rowConstraints>
             </GridPane>
 
             <!-- Update Button -->
-            <JFXButton text="Update" onAction="#btnUpdateOnAction"
-                       style="-fx-background-color: #1F45FC; -fx-background-radius: 12; -fx-text-fill: white;
+            <JFXButton onAction="#btnUpdateOnAction" text="Update"
+                       style="-fx-background-color: #27ae60; -fx-background-radius: 12; -fx-text-fill: white;
                               -fx-padding: 8 20; -fx-font-size: 14px;"/>
         </VBox>
 
         <!-- User Table Card -->
-        <VBox layoutX="60.0" layoutY="330.0" spacing="15"
-              style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 20;
-                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);"
-              prefWidth="680" prefHeight="270">
+        <VBox layoutX="48.0" layoutY="360.0" prefHeight="270" prefWidth="680" spacing="15"
+              style="-fx-background-color: #f3ede8; -fx-background-radius: 15; -fx-padding: 20;
+                     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 5);">
 
-            <Label text="Show User Details"
-                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Show User Details"/>
 
-            <TableView fx:id="tblUser" prefHeight="200.0" prefWidth="640.0">
+            <TableView fx:id="tblUser" prefHeight="200.0" prefWidth="640.0"
+                       style="-fx-background-color: #f3ede8; -fx-border-color: #9a3f3f; -fx-border-radius: 10;
+                              -fx-background-radius: 10;">
                 <columns>
                     <TableColumn fx:id="colUserName" prefWidth="220.0" text="User Name"/>
                     <TableColumn fx:id="colUserRole" prefWidth="220.0" text="User Role"/>
